@@ -40,17 +40,6 @@ There are no logo image files — the nav, hero, and footer each show a dashed-b
      have them (each is marked "Sample layout — not a real review" so nothing
      fake ships by accident).
 
-## Deploying with Cloudflare Pages
-
-1. Push this folder to a GitHub repo.
-2. In the Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect to Git**.
-3. Select the repo. Build settings: leave the **build command empty**, set the
-   **output directory** to `/` (this is a plain static site, no build step needed).
-4. Deploy. Cloudflare auto-builds on every push to `main`, and gives you a preview
-   URL for any other branch.
-5. Once it's live, go to the Pages project's **Custom domains** tab and add your
-   domain.
-
 ## Contact form note
 
 The "Request a Free Estimate" and "Call" / "Email" buttons use `tel:` / `mailto:`
