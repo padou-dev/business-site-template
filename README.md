@@ -1,5 +1,17 @@
 # Business Site Template
 
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/No%20Build%20Step-4CAF50?style=for-the-badge" alt="No Build Step">
+</p>
+
+<p>
+  <a href="https://padou-dev.github.io/business-site-template/">
+    <img src="https://img.shields.io/badge/Live%20Preview-2fa89f?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Preview">
+  </a>
+</p>
+
 A generic, static one-page marketing site for a local residential service business
 (originally built for an electrician, easy to retarget to any similar trade). No
 real business info, no real logo — every identifying detail is a placeholder so
