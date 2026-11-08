@@ -16,7 +16,7 @@
       <div class="logo-placeholder logo-placeholder--nav">Your<br>Logo</div>
       <span>YOUR BUSINESS NAME</span>
     </div>
-    <nav class="nav-links">
+    <nav class="nav-links" id="nav-links">
       <a href="#services">Services</a>
       <a href="#why-us">Why Us</a>
       <a href="#reviews">Reviews</a>
@@ -24,8 +24,10 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <span class="nav-phone">[PHONE NUMBER]</span>
       <a href="#contact" class="btn btn-accent">Free Estimate</a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
@@ -236,6 +238,51 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('nav-toggle');
+    var links = document.getElementById('nav-links');
+    if(!toggle || !links) return;
+
+    function closeMenu(){
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    function openMenu(){
+      links.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = links.classList.contains('open');
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    // Close after picking a link (it's a single-page anchor nav)
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeMenu);
+    });
+
+    // Close on click outside the menu
+    document.addEventListener('click', function(e){
+      if(links.classList.contains('open') && !links.contains(e.target) && e.target !== toggle){
+        closeMenu();
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeMenu();
+    });
+
+    // Close automatically if the window is resized back to desktop width
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 1140) closeMenu();
+    });
+  })();
+</script>
 
 </body>
 </html>
